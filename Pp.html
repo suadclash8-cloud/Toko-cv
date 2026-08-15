@@ -1,0 +1,1968 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amadeus CV | Jasa Pembuatan Curriculum Vitae Profesional</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #b5121b;
+      --dark: #111111;
+      --gold: #d9aa45;
+      --cream: #fffaf0;
+      --light: #f6f6f6;
+    }
+
+    * {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--cream);
+      color: #222;
+    }
+
+    /* =========================
+       SIDEBAR
+    ========================= */
+
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 270px;
+      height: 100vh;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(217,170,69,.16), transparent 25%),
+        linear-gradient(rgba(8,8,8,.97),rgba(20,8,9,.97));
+      background-size: cover;
+      background-position: center;
+      z-index: 2000;
+      padding: 25px 18px;
+      transition: .35s ease;
+      box-shadow: 8px 0 30px rgba(0,0,0,.25);
+    }
+
+    .sidebar.closed {
+      left: -270px;
+    }
+
+    .brand {
+      text-align: center;
+      color: white;
+      margin-bottom: 35px;
+    }
+
+    .brand h3 {
+      font-family: 'Cinzel', serif;
+      margin-top: 15px;
+      font-size: 22px;
+    }
+
+    .brand small {
+      color: #ddd;
+    }
+
+    .menu-title {
+      color: var(--gold);
+      font-size: 11px;
+      text-transform: uppercase;
+      margin: 20px 10px 8px;
+      letter-spacing: 2px;
+    }
+
+    .sidebar a {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: #eee;
+      padding: 13px 15px;
+      margin: 5px 0;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: .25s;
+    }
+
+    .sidebar a:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateX(5px);
+    }
+
+    .sidebar a i {
+      width: 22px;
+      color: var(--gold);
+    }
+
+    .sidebar a:hover i {
+      color: white;
+    }
+
+    .sidebar-social {
+      position: absolute;
+      bottom: 2px;
+      left: 20px;
+      right: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .sidebar-social a {
+      padding: 10px;
+      margin: 0;
+    }
+
+    /* =========================
+       MAIN
+    ========================= */
+
+    .main {
+      margin-left: 270px;
+      transition: .35s ease;
+    }
+
+    .main.full {
+      margin-left: 0;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(12px);
+      padding: 12px 25px;
+      box-shadow: 0 2px 20px rgba(0,0,0,.08);
+    }
+
+    .toggle-btn {
+      border: 0;
+      background: var(--dark);
+      color: white;
+      width: 45px;
+      height: 45px;
+      border-radius: 12px;
+      font-size: 19px;
+    }
+
+    .top-logo {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 20px;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 620px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 80% 25%, rgba(217,170,69,.20), transparent 25%),
+        linear-gradient(120deg,rgba(8,8,8,.98),rgba(86,8,15,.95));
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      border: 1px solid rgba(217,170,69,.25);
+      right: -180px;
+      top: -100px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .badge-id {
+      display: inline-block;
+      padding: 8px 16px;
+      border: 1px solid var(--gold);
+      border-radius: 30px;
+      color: var(--gold);
+      margin-bottom: 20px;
+      font-size: 13px;
+    }
+
+    .hero h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(40px,6vw,75px);
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: #ddd;
+      font-size: 17px;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: #111;
+      border: none;
+      padding: 13px 25px;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: .3s;
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(217,170,69,.25);
+    }
+
+    .btn-outline-light {
+      border-radius: 30px;
+      padding: 12px 25px;
+    }
+
+    /* =========================
+       INDONESIA ORNAMENT
+    ========================= */
+
+    .ornament {
+      text-align: center;
+      padding: 35px 0 10px;
+      color: var(--primary);
+    }
+
+    .ornament span {
+      font-size: 26px;
+      margin: 0 15px;
+    }
+
+    /* =========================
+       SECTION
+    ========================= */
+
+    section {
+      padding: 85px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title small {
+      color: var(--primary);
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .section-title h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 38px;
+      margin-top: 8px;
+    }
+
+    .section-title p {
+      color: #777;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    /* =========================
+       SERVICES
+    ========================= */
+
+    .service-card {
+      height: 100%;
+      padding: 30px;
+      border-radius: 20px;
+      background: white;
+      box-shadow: 0 12px 35px rgba(0,0,0,.07);
+      transition: .3s;
+      border: 1px solid #eee;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--gold);
+    }
+
+    .service-icon {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(181,18,27,.08);
+      color: var(--primary);
+      border-radius: 16px;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    /* =========================
+       CV PREVIEW
+    ========================= */
+
+    .cv-preview {
+      background: white;
+      min-height: 450px;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 20px 45px rgba(0,0,0,.13);
+      border-top: 8px solid var(--primary);
+      transition: .3s;
+    }
+
+    .cv-preview:hover {
+      transform: translateY(-8px);
+    }
+
+    .cv-head {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 18px;
+    }
+
+    .cv-avatar {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg,#222,#b5121b);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 25px;
+    }
+
+    .cv-head h4 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .cv-head small {
+      color: #777;
+    }
+
+    .cv-line {
+      height: 7px;
+      width: 80%;
+      background: #ddd;
+      border-radius: 20px;
+      margin: 10px 0;
+    }
+
+    .cv-line.short {
+      width: 55%;
+    }
+
+    .cv-line.red {
+      background: var(--primary);
+      width: 35%;
+    }
+
+    /* =========================
+       PRICING
+    ========================= */
+
+    .price-card {
+      background: white;
+      padding: 35px;
+      border-radius: 22px;
+      box-shadow: 0 15px 40px rgba(0,0,0,.08);
+      position: relative;
+      height: 100%;
+      border: 1px solid #eee;
+    }
+
+    .price-card.featured {
+      background: linear-gradient(145deg,#111,#421014);
+      color: white;
+      transform: scale(1.03);
+      border: 2px solid var(--gold);
+    }
+
+    .popular {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      background: var(--gold);
+      color: #111;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .price {
+      font-size: 38px;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 15px 0;
+    }
+
+    .featured .price {
+      color: var(--gold);
+    }
+
+    .price-card li {
+      list-style: none;
+      margin: 12px 0;
+    }
+
+    .price-card ul {
+      padding: 0;
+    }
+
+    /* =========================
+       PROMO
+    ========================= */
+
+    .promo {
+      background:
+        radial-gradient(circle at 85% 20%, rgba(217,170,69,.24), transparent 24%),
+        linear-gradient(120deg,rgba(142,12,24,.98),rgba(17,17,17,.98));
+      background-size: cover;
+      color: white;
+      border-radius: 30px;
+      padding: 60px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .promo h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 40px;
+    }
+
+    .promo-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: #111;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    /* =========================
+       TESTIMONI
+    ========================= */
+
+    .testimonial {
+      background: white;
+      padding: 28px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.06);
+      height: 100%;
+    }
+
+    .stars {
+      color: #e0ae36;
+      margin-bottom: 15px;
+    }
+
+    /* =========================
+       ORDER
+    ========================= */
+
+    .order-box {
+      background: white;
+      border-radius: 25px;
+      padding: 40px;
+      box-shadow: 0 15px 45px rgba(0,0,0,.08);
+    }
+
+    .form-control,
+    .form-select {
+      border-radius: 12px;
+      padding: 13px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: #111;
+      color: #aaa;
+      padding: 55px 0 25px;
+    }
+
+    footer h4 {
+      font-family: 'Cinzel', serif;
+      color: white;
+    }
+
+    footer a {
+      color: #aaa;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--gold);
+    }
+
+    .copyright {
+      border-top: 1px solid #333;
+      margin-top: 35px;
+      padding-top: 20px;
+      text-align: center;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media(max-width: 991px) {
+      .sidebar {
+        left: -270px;
+      }
+
+      .sidebar.open {
+        left: 0;
+      }
+
+      .main {
+        margin-left: 0;
+      }
+
+      .hero {
+        min-height: 580px;
+      }
+
+      .price-card.featured {
+        transform: none;
+      }
+    }
+  
+    /* =========================
+       AMADEUS CV V2 ENHANCEMENTS
+       Nuansa Nusantara • Elegan • Modern
+    ========================= */
+    :root{
+      --ink:#101010;
+      --wine:#8f111c;
+      --wine-dark:#5e0b12;
+      --gold-light:#f1d58a;
+      --paper:#fffaf0;
+    }
+
+    body{
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:3000;
+      opacity:.045;
+      background-image:
+        radial-gradient(circle at 10% 20%, #000 0 1px, transparent 1.5px),
+        radial-gradient(circle at 80% 70%, #000 0 1px, transparent 1.5px);
+      background-size:24px 24px, 31px 31px;
+      mix-blend-mode:multiply;
+    }
+
+    .sidebar{
+      overflow:hidden;
+    }
+
+    .sidebar::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      opacity:.10;
+      background:
+        linear-gradient(45deg, transparent 45%, var(--gold) 46%, var(--gold) 49%, transparent 50%),
+        linear-gradient(-45deg, transparent 45%, var(--gold) 46%, var(--gold) 49%, transparent 50%);
+      background-size:34px 34px;
+      mask-image:linear-gradient(to bottom, black, transparent 82%);
+      pointer-events:none;
+    }
+
+    .sidebar > *{
+      position:relative;
+      z-index:2;
+    }
+
+    .brand-logo{
+      position:relative;
+    }
+
+    .brand-logo::after{
+      content:"";
+      position:absolute;
+      inset:-8px;
+      border:1px solid rgba(217,170,69,.45);
+      border-radius:50%;
+      transform:rotate(45deg);
+    }
+
+    .sidebar a.active{
+      background:linear-gradient(90deg,var(--primary),rgba(181,18,27,.45));
+      box-shadow:inset 3px 0 var(--gold);
+    }
+
+    .topbar{
+      border-bottom:1px solid rgba(217,170,69,.18);
+    }
+
+    .top-logo::after{
+      content:" • NUSANTARA";
+      color:#9a7b2f;
+      font-size:10px;
+      letter-spacing:1.5px;
+      margin-left:5px;
+    }
+
+    .hero{
+      isolation:isolate;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:1;
+      opacity:.10;
+      background:
+        repeating-linear-gradient(45deg,
+          transparent 0 18px,
+          rgba(217,170,69,.8) 19px 20px,
+          transparent 21px 36px);
+      mask-image:linear-gradient(90deg, transparent, black 20%, black 80%, transparent);
+      pointer-events:none;
+    }
+
+    .hero-content{
+      max-width:980px;
+    }
+
+    .badge-id{
+      background:rgba(0,0,0,.18);
+      backdrop-filter:blur(8px);
+      box-shadow:0 8px 25px rgba(0,0,0,.12);
+    }
+
+    .hero-stat{
+      min-width:110px;
+      padding:10px 16px;
+      border-left:1px solid rgba(217,170,69,.55);
+    }
+
+    .hero-stat strong{
+      color:var(--gold-light);
+      font-size:22px;
+    }
+
+    .ornament{
+      position:relative;
+      overflow:hidden;
+    }
+
+    .ornament::before,
+    .ornament::after{
+      content:"";
+      display:inline-block;
+      width:min(30vw,240px);
+      height:1px;
+      vertical-align:middle;
+      margin:0 14px;
+      background:linear-gradient(90deg,transparent,var(--gold),transparent);
+    }
+
+    .nusantara-divider{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:14px;
+      margin:0 auto 35px;
+      color:var(--gold);
+      font-size:20px;
+    }
+
+    .nusantara-divider::before,
+    .nusantara-divider::after{
+      content:"";
+      width:90px;
+      height:1px;
+      background:linear-gradient(90deg,transparent,var(--gold));
+    }
+
+    .nusantara-divider::after{
+      background:linear-gradient(90deg,var(--gold),transparent);
+    }
+
+    .service-card,
+    .price-card,
+    .testimonial,
+    .order-box{
+      position:relative;
+      overflow:hidden;
+    }
+
+    .service-card::before,
+    .price-card::before,
+    .testimonial::before{
+      content:"✦";
+      position:absolute;
+      right:18px;
+      top:12px;
+      color:rgba(181,18,27,.10);
+      font-size:44px;
+      font-family:serif;
+    }
+
+    .service-card h4,
+    .price-card h4{
+      font-family:'Cinzel',serif;
+    }
+
+    .cv-preview{
+      position:relative;
+    }
+
+    .cv-preview::before{
+      content:"✦  AMADEUS";
+      position:absolute;
+      right:14px;
+      bottom:12px;
+      color:rgba(181,18,27,.12);
+      font-size:11px;
+      letter-spacing:2px;
+      font-weight:700;
+    }
+
+    .price-card.featured{
+      box-shadow:0 25px 60px rgba(94,11,18,.24);
+    }
+
+    .promo{
+      box-shadow:0 25px 60px rgba(17,17,17,.18);
+      border:1px solid rgba(217,170,69,.45);
+    }
+
+    .promo::after{
+      content:"ᯓ";
+      position:absolute;
+      right:4%;
+      bottom:-40px;
+      font-size:190px;
+      color:rgba(217,170,69,.08);
+      font-family:serif;
+      transform:rotate(-20deg);
+    }
+
+    .form-control:focus,
+    .form-select:focus{
+      border-color:var(--gold);
+      box-shadow:0 0 0 .2rem rgba(217,170,69,.15);
+    }
+
+    .floating-wa{
+      position:fixed;
+      right:22px;
+      bottom:22px;
+      width:58px;
+      height:58px;
+      display:grid;
+      place-items:center;
+      border-radius:50%;
+      background:#25d366;
+      color:white;
+      z-index:2500;
+      text-decoration:none;
+      box-shadow:0 14px 35px rgba(0,0,0,.25);
+      transition:.25s;
+    }
+
+    .floating-wa:hover{
+      color:white;
+      transform:translateY(-4px) scale(1.05);
+    }
+
+    .back-top{
+      position:fixed;
+      right:22px;
+      bottom:92px;
+      width:42px;
+      height:42px;
+      border:0;
+      border-radius:50%;
+      background:var(--dark);
+      color:var(--gold);
+      z-index:2400;
+      opacity:0;
+      pointer-events:none;
+      transform:translateY(10px);
+      transition:.25s;
+    }
+
+    .back-top.show{
+      opacity:1;
+      pointer-events:auto;
+      transform:none;
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(24px);
+      transition:opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible{
+      opacity:1;
+      transform:none;
+    }
+
+    @media(max-width:991px){
+      .sidebar{
+        box-shadow:12px 0 45px rgba(0,0,0,.35);
+      }
+
+      .main{
+        margin-left:0;
+      }
+
+      .hero-stat{
+        min-width:100px;
+      }
+    }
+
+    @media(max-width:575px){
+      .hero h1{
+        font-size:38px;
+      }
+
+      .promo{
+        padding:34px 25px;
+      }
+
+      .ornament::before,
+      .ornament::after{
+        width:18vw;
+      }
+
+      .floating-wa{
+        right:16px;
+        bottom:16px;
+      }
+
+      .back-top{
+        right:16px;
+        bottom:84px;
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{
+        scroll-behavior:auto!important;
+        animation:none!important;
+        transition:none!important;
+      }
+      .reveal{
+        opacity:1;
+        transform:none;
+      }
+    }
+
+  
+    .sidebar-backdrop{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.48);
+      backdrop-filter:blur(2px);
+      z-index:1900;
+      opacity:0;
+      pointer-events:none;
+      transition:.3s ease;
+    }
+    .sidebar-backdrop.show{
+      opacity:1;
+      pointer-events:auto;
+    }
+    @media(min-width:992px){
+      .sidebar-backdrop{display:none!important;}
+    }
+
+  </style>
+</head>
+
+<body>
+<div class="sidebar-backdrop" id="sidebarBackdrop" aria-hidden="true"></div>
+
+<!-- =========================
+     SIDEBAR
+========================= -->
+
+<aside class="sidebar" id="sidebar">
+
+  <div class="brand">
+
+    <div class="brand-logo">
+      <i class="fa-solid fa-garuda"></i>
+    </div>
+
+    <h3>AMADEUS CV</h3>
+    <small>CV Profesional Indonesia</small>
+
+  </div>
+
+  <div class="menu-title">Menu Utama</div>
+
+  <a href="#home">
+    <i class="fa-solid fa-house"></i>
+    Beranda
+  </a>
+
+  <a href="#layanan">
+    <i class="fa-solid fa-pen-ruler"></i>
+    Layanan CV
+  </a>
+
+  <a href="#contoh">
+    <i class="fa-solid fa-file-lines"></i>
+    Contoh CV
+  </a>
+
+  <a href="#paket">
+    <i class="fa-solid fa-tags"></i>
+    Paket Harga
+  </a>
+
+  <a href="#promo">
+    <i class="fa-solid fa-bullhorn"></i>
+    Promo
+  </a>
+
+  <a href="#testimoni">
+    <i class="fa-solid fa-star"></i>
+    Testimoni
+  </a>
+
+  <a href="#order">
+    <i class="fa-solid fa-cart-shopping"></i>
+    Pesan CV
+  </a>
+
+  <a href="https://wa.me/6285711814180" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+    WhatsApp
+  </a>
+
+  <a href="mailto:yow.manes9010@gmail.com">
+    <i class="fa-solid fa-envelope"></i>
+    Email
+  </a>
+
+  <div class="sidebar-social">
+    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+  </div>
+
+</aside>
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<div class="main" id="main">
+
+  <!-- TOPBAR -->
+
+  <div class="topbar d-flex align-items-center justify-content-between">
+
+    <div class="d-flex align-items-center gap-3">
+
+      <button class="toggle-btn" id="toggleSidebar">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <span class="top-logo">
+        AMADEUS CV
+      </span>
+
+    </div>
+
+    <a href="#order" class="btn btn-danger rounded-pill px-4">
+      <i class="fa-solid fa-file-signature me-2"></i>
+      Buat CV
+    </a>
+
+  </div>
+
+
+  <!-- =========================
+       HERO
+  ========================= -->
+
+  <section class="hero" id="home">
+
+    <div class="container hero-content">
+
+      <span class="badge-id">
+        🇮🇩 KARYA PROFESIONAL BERNUANSA INDONESIA
+      </span>
+
+      <h1>
+        Buat CV yang<br>
+        <span>Menonjol & Profesional</span>
+      </h1>
+
+      <p>
+        Amadeus CV membantu Anda membuat Curriculum Vitae modern,
+        elegan dan profesional untuk kebutuhan kerja, magang,
+        beasiswa maupun pengembangan karier.
+      </p>
+
+      <div class="mt-4 d-flex flex-wrap gap-3">
+
+        <a href="#order" class="btn btn-gold">
+          <i class="fa-solid fa-wand-magic-sparkles me-2"></i>
+          Buat CV Sekarang
+        </a>
+
+        <a href="#contoh" class="btn btn-outline-light">
+          Lihat Contoh CV
+        </a>
+
+      </div>
+
+      <div class="row mt-5 g-3">
+
+        <div class="col-auto">
+          <strong>500+</strong><br>
+          <small>CV Dibuat</small>
+        </div>
+
+        <div class="col-auto">
+          <strong>98%</strong><br>
+          <small>Pelanggan Puas</small>
+        </div>
+
+        <div class="col-auto">
+          <strong>24 Jam</strong><br>
+          <small>Estimasi Pengerjaan</small>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ORNAMENT -->
+
+  <div class="ornament">
+    <span>✦</span>
+    🪷
+    <span>✦</span>
+  </div>
+
+
+  <!-- =========================
+       LAYANAN
+  ========================= -->
+
+  <section id="layanan">
+
+    <div class="container">
+
+      <div class="section-title">
+        <div class="nusantara-divider" aria-hidden="true">❖</div>
+        <small>Layanan Kami</small>
+
+        <h2>Solusi CV Profesional</h2>
+
+        <p>
+          Pilih layanan yang sesuai dengan kebutuhan karier Anda.
+        </p>
+
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-lg-4">
+
+          <div class="service-card reveal">
+
+            <div class="service-icon">
+              <i class="fa-solid fa-file-lines"></i>
+            </div>
+
+            <h4>CV Profesional</h4>
+
+            <p>
+              CV modern dan profesional yang disusun
+              agar informasi Anda lebih mudah dibaca recruiter.
+            </p>
+
+            <a href="#order" class="text-danger fw-bold">
+              Pesan sekarang →
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="col-lg-4">
+
+          <div class="service-card reveal">
+
+            <div class="service-icon">
+              <i class="fa-solid fa-user-tie"></i>
+            </div>
+
+            <h4>CV ATS Friendly</h4>
+
+            <p>
+              Format CV yang dirancang agar lebih mudah
+              diproses oleh sistem Applicant Tracking System.
+            </p>
+
+            <a href="#order" class="text-danger fw-bold">
+              Pesan sekarang →
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="col-lg-4">
+
+          <div class="service-card reveal">
+
+            <div class="service-icon">
+              <i class="fa-solid fa-briefcase"></i>
+            </div>
+
+            <h4>CV Executive</h4>
+
+            <p>
+              Desain premium untuk profesional,
+              supervisor, manager dan kebutuhan executive.
+            </p>
+
+            <a href="#order" class="text-danger fw-bold">
+              Pesan sekarang →
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CONTOH CV
+  ========================= -->
+
+  <section id="contoh" class="bg-light">
+
+    <div class="container">
+
+      <div class="section-title">
+        <div class="nusantara-divider" aria-hidden="true">❖</div>
+        <small>Portfolio</small>
+
+        <h2>Contoh CV Terbaik</h2>
+
+        <p>
+          Beberapa konsep desain CV yang dapat Anda pilih.
+        </p>
+
+      </div>
+
+
+      <div class="row g-4">
+              
+        <!-- CV 3 -->
+
+        <div class="col-lg-4">
+
+          <div class="cv-preview reveal">
+
+            <div class="cv-head">
+
+              <div class="cv-avatar">
+                <i class="fa-solid fa-user-tie"></i>
+              </div>
+
+              <div>
+                <h4>Amadeus Pardamean</h4>
+                <small>Web Developer</small>
+              </div>
+
+            </div>
+
+            <h6 class="mt-4 text-danger">EXECUTIVE PROFILE</h6>
+
+            <div class="cv-line"></div>
+            <div class="cv-line short"></div>
+
+            <h6 class="mt-4 text-danger">CAREER</h6>
+
+            <div class="cv-line red"></div>
+            <div class="cv-line"></div>
+            <div class="cv-line short"></div>
+
+            <h6 class="mt-4 text-danger">ACHIEVEMENT</h6>
+
+            <div class="cv-line"></div>
+            <div class="cv-line short"></div>
+
+          </div>
+
+          <div class="text-center mt-3">
+            <strong>Executive Premium</strong>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       PAKET
+  ========================= -->
+
+  <section id="paket">
+
+    <div class="container">
+
+      <div class="section-title">
+        <div class="nusantara-divider" aria-hidden="true">❖</div>
+        <small>Harga</small>
+
+        <h2>Pilih Paket CV</h2>
+
+        <p>
+          Paket dibuat sederhana agar Anda mudah menentukan pilihan.
+        </p>
+
+      </div>
+
+
+      <div class="row g-4">
+
+
+        <!-- BASIC -->
+
+        <div class="col-lg-4">
+
+          <div class="price-card reveal">
+
+            <h4>Basic</h4>
+
+            <p>Untuk pelajar dan pemula</p>
+
+            <div class="price">
+              Rp49K
+            </div>
+
+            <ul>
+
+              <li>
+                <i class="fa-solid fa-check text-success me-2"></i>
+                CV 1 halaman
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-success me-2"></i>
+                Desain modern
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-success me-2"></i>
+                Format PDF
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-success me-2"></i>
+                1x revisi
+              </li>
+
+            </ul>
+
+            <a href="#order" class="btn btn-outline-danger rounded-pill w-100">
+              Pilih Paket
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- PROFESSIONAL -->
+
+        <div class="col-lg-4">
+
+          <div class="price-card featured">
+
+            <span class="popular">
+              TERLARIS
+            </span>
+
+            <h4>Professional</h4>
+
+            <p>Untuk pencari kerja</p>
+
+            <div class="price">
+              Rp99K
+            </div>
+
+            <ul>
+
+              <li>
+                <i class="fa-solid fa-check me-2"></i>
+                CV profesional
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check me-2"></i>
+                ATS Friendly
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check me-2"></i>
+                PDF + JPG
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check me-2"></i>
+                3x revisi
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check me-2"></i>
+                Konsultasi CV
+              </li>
+
+            </ul>
+
+            <a href="#order" class="btn btn-gold w-100">
+              Pilih Paket
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- PREMIUM -->
+
+        <div class="col-lg-4">
+
+          <div class="price-card reveal">
+
+            <h4>Premium</h4>
+
+            <p>Untuk profesional & executive</p>
+
+            <div class="price">
+              Rp199K
+            </div>
+
+            <ul>
+
+              <li>
+                <i class="fa-solid fa-check text-success me-2"></i>
+                CV Premium
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-success me-2"></i>
+                ATS Friendly
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-success me-2"></i>
+                Cover Letter
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-success me-2"></i>
+                PDF + JPG
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-success me-2"></i>
+                Revisi unlimited*
+              </li>
+
+            </ul>
+
+            <a href="#order" class="btn btn-outline-danger rounded-pill w-100">
+              Pilih Paket
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       PROMO
+  ========================= -->
+
+  <section id="promo">
+
+    <div class="container">
+
+      <div class="promo">
+
+        <div class="row align-items-center">
+
+          <div class="col-lg-8">
+
+            <span class="promo-badge">
+              🔥 PROMO BULAN INI
+            </span>
+
+            <h2>
+              Upgrade CV Anda,
+              Tingkatkan Kesan Profesional!
+            </h2>
+
+            <p class="mt-3">
+              Dapatkan desain CV profesional dengan harga promo.
+              Cocok untuk fresh graduate, pekerja profesional,
+              mahasiswa dan pencari kerja.
+            </p>
+
+            <div class="mt-4">
+
+              <a href="#order" class="btn btn-gold">
+                Ambil Promo
+              </a>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-4 text-center">
+
+            <div style="font-size:100px;">
+              🇮🇩
+            </div>
+
+            <h5>
+              Karya Indonesia
+            </h5>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       TESTIMONI
+  ========================= -->
+
+  <section id="testimoni" class="bg-light">
+
+    <div class="container">
+
+      <div class="section-title">
+        <div class="nusantara-divider" aria-hidden="true">❖</div>
+        <small>Customer Review</small>
+
+        <h2>Apa Kata Mereka?</h2>
+
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-lg-4">
+
+          <div class="testimonial reveal">
+
+            <div class="stars">
+              ★★★★★
+            </div>
+
+            <p>
+              “Desain CV sangat rapi dan profesional.
+              Saya jadi lebih percaya diri saat melamar pekerjaan.”
+            </p>
+
+            <strong>— Rina, Fresh Graduate</strong>
+
+          </div>
+
+        </div>
+
+
+        <div class="col-lg-4">
+
+          <div class="testimonial reveal">
+
+            <div class="stars">
+              ★★★★★
+            </div>
+
+            <p>
+              “Prosesnya cepat dan hasilnya bagus.
+              Layout CV terlihat jauh lebih profesional.”
+            </p>
+
+            <strong>— Fajar, Marketing</strong>
+
+          </div>
+
+        </div>
+
+
+        <div class="col-lg-4">
+
+          <div class="testimonial reveal">
+
+            <div class="stars">
+              ★★★★★
+            </div>
+
+            <p>
+              “Konsep premium sangat cocok untuk kebutuhan
+              profesional. Recommended!”
+            </p>
+
+            <strong>— Daniel, Manager</strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       ORDER
+  ========================= -->
+
+  <section id="order">
+
+    <div class="container">
+
+      <div class="section-title">
+        <div class="nusantara-divider" aria-hidden="true">❖</div>
+        <small>Order</small>
+
+        <h2>Pesan CV Anda</h2>
+
+        <p>
+          Isi data berikut kemudian kirim pesanan melalui WhatsApp.
+        </p>
+
+      </div>
+
+
+      <div class="row justify-content-center">
+
+        <div class="col-lg-8">
+
+          <div class="order-box reveal">
+
+            <form id="orderForm">
+
+              <div class="row g-3">
+
+                <div class="col-md-6">
+
+                  <label class="form-label">
+                    Nama Lengkap
+                  </label>
+
+                  <input
+                    type="text"
+                    id="nama"
+                    class="form-control"
+                    placeholder="Nama Anda"
+                    required>
+
+                </div>
+
+
+                <div class="col-md-6">
+
+                  <label class="form-label">
+                    Nomor WhatsApp
+                  </label>
+
+                  <input
+                    type="tel"
+                    id="telepon"
+                    class="form-control"
+                    placeholder="08xxxxxxxx"
+                    required>
+
+                </div>
+
+
+                <div class="col-md-6">
+
+                  <label class="form-label">
+                    Pilih Paket
+                  </label>
+
+                  <select id="paketForm" class="form-select">
+
+                    <option>Basic - Rp49K</option>
+                    <option selected>
+                      Professional - Rp99K
+                    </option>
+                    <option>
+                      Premium - Rp199K
+                    </option>
+
+                  </select>
+
+                </div>
+
+
+                <div class="col-md-6">
+
+                  <label class="form-label">
+                    Kebutuhan
+                  </label>
+
+                  <select id="kebutuhan" class="form-select">
+
+                    <option>Melamar pekerjaan</option>
+                    <option>Magang</option>
+                    <option>Fresh Graduate</option>
+                    <option>Beasiswa</option>
+                    <option>Profesional</option>
+
+                  </select>
+
+                </div>
+
+
+                <div class="col-12">
+
+                  <label class="form-label">
+                    Catatan
+                  </label>
+
+                  <textarea
+                    id="catatan"
+                    class="form-control"
+                    rows="5"
+                    placeholder="Tuliskan kebutuhan Anda..."></textarea>
+
+                </div>
+
+
+                <div class="col-12">
+
+                  <button
+                    type="submit"
+                    class="btn btn-success rounded-pill w-100 py-3">
+
+                    <i class="fa-brands fa-whatsapp me-2"></i>
+                    Kirim Pesanan via WhatsApp
+
+                  </button>
+
+                </div>
+
+              </div>
+
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="row g-4">
+
+        <div class="col-lg-5">
+
+          <h4>
+            🇮🇩 AMADEUS CV
+          </h4>
+
+          <p>
+            Jasa pembuatan Curriculum Vitae profesional
+            dengan desain modern, elegan dan berkarakter Indonesia.
+          </p>
+
+        </div>
+
+
+        <div class="col-lg-3">
+
+          <h6 class="text-white">
+            Navigasi
+          </h6>
+
+          <p><a href="#home">Beranda</a></p>
+          <p><a href="#layanan">Layanan</a></p>
+          <p><a href="#contoh">Contoh CV</a></p>
+          <p><a href="#paket">Harga</a></p>
+
+        </div>
+
+
+        <div class="col-lg-4">
+
+          <h6 class="text-white">
+            Hubungi Kami
+          </h6>
+
+          <p>
+            <i class="fa-brands fa-whatsapp me-2"></i>
+            085711814180
+          </p>
+
+          <p>
+            <i class="fa-solid fa-envelope me-2"></i>
+            yow.manes9010@gmail.com
+          </p>
+
+          <p>
+            🇮🇩 Melayani seluruh Indonesia
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="copyright">
+
+        © 2026 <strong>Amadeus Pardamean CV</strong>.
+        Semua hak dilindungi.
+
+      </div>
+
+    </div>
+
+  </footer>
+
+</div>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+  const sidebar = document.getElementById("sidebar");
+  const main = document.getElementById("main");
+  const toggle = document.getElementById("toggleSidebar");
+  const backdrop = document.getElementById("sidebarBackdrop");
+  const backTop = document.getElementById("backTop");
+
+  function isMobile(){
+    return window.innerWidth <= 991;
+  }
+
+  function setSidebar(open){
+    if(isMobile()){
+      sidebar.classList.toggle("open", open);
+      backdrop.classList.toggle("show", open);
+    }else{
+      sidebar.classList.toggle("closed", !open);
+      main.classList.toggle("full", !open);
+    }
+  }
+
+  toggle.addEventListener("click", () => {
+    if(isMobile()){
+      setSidebar(!sidebar.classList.contains("open"));
+    }else{
+      const isClosed = sidebar.classList.contains("closed");
+      setSidebar(isClosed);
+    }
+  });
+
+  backdrop.addEventListener("click", () => setSidebar(false));
+
+  document.querySelectorAll(".sidebar a").forEach(link => {
+    link.addEventListener("click", () => {
+      if(isMobile()) setSidebar(false);
+    });
+  });
+
+  window.addEventListener("resize", () => {
+    if(isMobile()){
+      sidebar.classList.remove("closed");
+      main.classList.remove("full");
+    }else{
+      sidebar.classList.remove("open");
+      backdrop.classList.remove("show");
+    }
+  });
+
+  // Active menu berdasarkan section yang sedang terlihat.
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll('.sidebar a[href^="#"]');
+
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        navLinks.forEach(link => link.classList.remove("active"));
+        const current = document.querySelector(
+          '.sidebar a[href="#' + entry.target.id + '"]'
+        );
+        if(current) current.classList.add("active");
+      }
+    });
+  }, { rootMargin:"-25% 0px -65% 0px" });
+
+  sections.forEach(section => sectionObserver.observe(section));
+
+  // Animasi muncul ketika elemen masuk viewport.
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold:0.12 });
+
+  document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
+
+  // Tombol kembali ke atas.
+  window.addEventListener("scroll", () => {
+    backTop.classList.toggle("show", window.scrollY > 500);
+  });
+
+  backTop.addEventListener("click", () => {
+    window.scrollTo({top:0, behavior:"smooth"});
+  });
+
+  // Form WhatsApp.
+  document.getElementById("orderForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const nama = document.getElementById("nama").value.trim();
+    const telepon = document.getElementById("telepon").value.trim();
+    const paket = document.getElementById("paketForm").value;
+    const kebutuhan = document.getElementById("kebutuhan").value;
+    const catatan = document.getElementById("catatan").value.trim();
+
+    const nomorAdmin = "6285711814180";
+
+    const pesan =
+`Halo Amadeus CV 👋
+
+Saya ingin memesan jasa pembuatan CV.
+
+Nama: ${nama}
+WhatsApp: ${telepon}
+Paket: ${paket}
+Kebutuhan: ${kebutuhan}
+
+Catatan:
+${catatan || "-"}
+
+Mohon informasi selanjutnya.
+Terima kasih. 🇮🇩`;
+
+    const url =
+      "https://wa.me/" + nomorAdmin + "?text=" +
+      encodeURIComponent(pesan);
+
+    window.open(url, "_blank", "noopener");
+  });
+</script>
+
+
+<!-- Bootstrap JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<button class="back-top" id="backTop" aria-label="Kembali ke atas">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<a class="floating-wa"
+   href="https://wa.me/6285711814180?text=Halo%20Amadeus%20CV%2C%20saya%20ingin%20konsultasi%20pembuatan%20CV."
+   target="_blank" rel="noopener" aria-label="Chat WhatsApp Amadeus CV">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+</body>
+</html>
